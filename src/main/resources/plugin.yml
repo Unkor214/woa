@@ -1,0 +1,6 @@
+name: wo_a
+version: '$version'
+
+main: me.unkor.wo_a.Wo_a
+api-version: '1.21.11'
+load: POSTWORLD
