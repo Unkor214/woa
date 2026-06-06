@@ -1,5 +1,6 @@
 package me.unkor.wo_a.events;
 
+import me.unkor.wo_a.Wo_a;
 import me.unkor.wo_a.items.WoaStick;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,7 +18,7 @@ public class WoaStickEvents implements Listener {
         Player player = (Player) event.getClickedBlock();
         if (player.getScoreboard().getPlayerTeam(player) != null) return;
 
-        player.getScoreboard().getPlayerTeam(player);
+        player.getScoreboard().getTeam(Wo_a.getInstance().getConfig().getString("everyone_team"));
         event.setCancelled(true);
     }
 }

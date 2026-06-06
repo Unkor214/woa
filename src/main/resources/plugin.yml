@@ -7,4 +7,12 @@ load: POSTWORLD
 
 commands:
   woa:
-    usage: /woa <apply|tp> <player|radius> <0-128>
+    usage: /woa <apply|give> <player>
+    permission: permission.admin
+
+permissions:
+  permission.admin :
+    description: "This permission for admins"
+    default: op
+    children:
+      permission.admin : true
