@@ -3,8 +3,19 @@ version: '$version'
 
 main: me.unkor.wo_a.Wo_a
 api-version: '1.21.11'
-load: POSTWORLD
+load: STARTUP
+
+author: 'Unkor'
+
+permissions:
+  command.permissions.admin :
+    default: op
+    description: 'op permissions'
+
 
 commands:
   woa:
     usage: /woa <apply|give> <player>
+
+    permission: command.permissions.admin
+    permission-message: 'You do not have a permissions for use this command'
