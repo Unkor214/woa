@@ -13,8 +13,11 @@ public class WoaCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label,
                              @NotNull String @NotNull [] args) {
-        if (args[0] == "apply") {
-            if (args[1] == "player") {
+        if (args.length == 0) {
+            return false;
+        }
+        else if (args[0].equals("apply")) {
+            if (args[1].equals("player")) {
                 Player player = Bukkit.getPlayer(args[2]);
 
                 player.getScoreboard().getTeam(Wo_a.getInstance().getConfig().getString("everyone_team")).addPlayer(player);
@@ -22,7 +25,7 @@ public class WoaCommand implements CommandExecutor {
 
                 return true;
             }
-        } else if (args[0] == "give") {
+        } else if (args[0].equals("give")) {
             if (!(sender instanceof Player)) {
                 sender.sendMessage("error - you do not have inventory");
                 return true;
